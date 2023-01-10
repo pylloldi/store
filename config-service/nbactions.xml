@@ -16,7 +16,7 @@
                 <exec.mainClass>com.pyc.store.config.ConfigServiceApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <Env.GIT_USER>pylloldi</Env.GIT_USER>
-                <Env.GIT_PASSWORD>Yagwgabth638Ekg</Env.GIT_PASSWORD>
+                <Env.GIT_PASSWORD>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</Env.GIT_PASSWORD>
             </properties>
         </action>
         <action>
