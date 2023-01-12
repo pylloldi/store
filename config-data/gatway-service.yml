@@ -15,14 +15,14 @@ spring:
       routes:
         - id: customer-service
         url: lb://customer-service
-        prodicates:
+        predicates:
           - Path=/customer/**
         - id: product-service
         url: lb://product-service
-        prodicates:
+        predicates:
           - Path=/product/**
         - id: invoices-service
         url: lb://invoices-service
-        prodicates:
+        predicates:
           - Path=/invoices/**
           
