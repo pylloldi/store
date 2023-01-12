@@ -2,7 +2,9 @@ package com.pyc.store.shopping.client;
 
 import com.pyc.store.shopping.model.Customer;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CustomerHystrixFallbackFactory implements CustomerClient {
 
     @Override
