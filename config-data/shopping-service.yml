@@ -50,8 +50,9 @@ eureka:
 #    enabled: true
 #  circuitbreaker:
 #    enabled: true
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
+
+management:
+ endpoints:
+   web:
+     exposure:
+       include: "*"
