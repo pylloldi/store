@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.pyc.store.shopping.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pyc.store.shopping.model.Customer;
+import com.pyc.store.shopping.model.Product;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,8 +15,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "tlb_invoices")
-public class Invoice {
-
+public class Invoice implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,8 +33,6 @@ public class Invoice {
     @Temporal(TemporalType.DATE)
     private Date createAt;
 
-
-
     @Valid
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -45,6 +40,9 @@ public class Invoice {
     private List<InvoiceItem> items;
 
     private String state;
+    
+    @Transient
+    private Customer customer;     
 
     public Invoice(){
         items = new ArrayList<>();

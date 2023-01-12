@@ -4,6 +4,7 @@
  */
 package com.pyc.store.shopping.entity;
 
+import com.pyc.store.shopping.model.Product;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,10 +30,11 @@ public class InvoiceItem  {
     @Column(name = "product_id")
     private Long productId;
 
-
     @Transient
     private Double subTotal;
-
+    
+    @Transient
+    private Product product;
 
     public Double getSubTotal(){
         if (this.price >0  && this.quantity >0 ){
