@@ -7,6 +7,6 @@ eureka:
     registerWithEureka: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
-  instance:
+  #instance:
     #hostname: localhost
-    instance-id: ${spring.aplicattion.name}:${spring.application.instance_id:${random.value}}
+    #instance-id: ${spring.aplicattion.name}:${spring.application.instance_id:${random.value}}
