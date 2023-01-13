@@ -7,6 +7,6 @@ eureka:
     register-rwth-eureka: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
-  #instance:
-    #hostname: localhost
+  instance:
+    hostname: localhost
     #instance-id: ${spring.aplicattion.name}:${spring.application.instance_id:${random.value}}
