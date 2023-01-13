@@ -4,9 +4,9 @@ server:
 eureka:
   client:
     fetch-registry: false
-    register-rwth-eureka: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    register-with-eureka: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka
   instance:
     hostname: localhost
     #instance-id: ${spring.aplicattion.name}:${spring.application.instance_id:${random.value}}
