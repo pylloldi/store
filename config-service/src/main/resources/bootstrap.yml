@@ -1,16 +1,16 @@
 server:
-  port: 8081
+    port: 8081
     
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          default-label: master
-          uri: https://github.com/pylloldi/store.git
-          searchPaths: config-data
-          username: ${GIT_USER}
-          password: ${GIT_PASSWORD}
+    cloud:
+        config:
+            server:
+                git:
+                    default-label: master
+                    uri: https://github.com/pylloldi/store.git
+                    searchPaths: config-data
+                    username: ${GIT_USER}
+                    password: ${GIT_PASSWORD}
     security:
         user:
             name: root
