@@ -4,7 +4,7 @@ server:
 eureka:
   instance:
     #hostname: localhost
-    instance-id: ${spring.aplicattion.name]:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.aplicattion.name}:${spring.application.instance_id:${random.value}}
   client:
     registerWithEureka: false
     fetchRegistry: false
