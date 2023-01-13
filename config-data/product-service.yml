@@ -40,12 +40,13 @@ logging:
 
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    fetch-registry: true
+    register-rwth-eureka: true
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/
+      defaultZone: http://localhost:8099/eureka
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    hostname: localhost
 
 management:
  endpoints:
