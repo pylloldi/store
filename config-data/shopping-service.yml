@@ -48,6 +48,12 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     #hostname: localhost
 
+resilience4j.bulkhead:
+    instances:
+        getCustomer:
+            maxWaitDuration: 10ms
+            maxConcurrentCalls: 20
+
 management:
  endpoints:
    web:
