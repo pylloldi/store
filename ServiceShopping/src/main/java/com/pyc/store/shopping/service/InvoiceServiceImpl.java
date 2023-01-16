@@ -8,6 +8,7 @@ import com.pyc.store.shopping.model.Customer;
 import com.pyc.store.shopping.model.Product;
 import com.pyc.store.shopping.repository.InvoiceItemsRepository;
 import com.pyc.store.shopping.repository.InvoiceRepository;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +82,6 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    @CircuitBreaker(name = "customerCB", fallbackMethod = "fallbackCustomer")
     public Invoice getInvoice(Long id) {
         Invoice invoice = invoiceRepository.findById(id).orElse(null);
         
@@ -102,13 +102,5 @@ public class InvoiceServiceImpl implements InvoiceService {
         return invoice;
     }
     
-    public ResponseEntity<Customer> getCustomer(long id) {
-        Customer customer = Customer.builder()
-                .firstName("none")
-                .lastName("none")
-                .email("none")
-                .photoUrl("none").build();
-        
-        return ResponseEntity.ok(customer);
-    }
+    
 }
