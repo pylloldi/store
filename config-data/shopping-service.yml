@@ -48,13 +48,28 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     #hostname: localhost
 
-#Feign:
-#  hystrix:
-#    enabled: true
-#  ribbon:
-#    enabled: true
-#  circuitbreaker:
-#    enabled: true
+resilience4j.circuitbreaker:
+    instances:
+        productCB:
+            registerHealthIndicator: true
+            slidingWindowSize: 10
+            permittedNumberOfCallsInHalfOpenState: 3
+            slidingWindowType: TIME_BASED
+            minimumNumberOfCalls: 20
+            waitDurationInOpenState: 50s
+            failureRateThreshold: 50
+            eventConsumerBufferSize: 10
+            recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
+        customerCB:
+            registerHealthIndicator: true
+            slidingWindowSize: 10
+            permittedNumberOfCallsInHalfOpenState: 3
+            slidingWindowType: TIME_BASED
+            minimumNumberOfCalls: 20
+            waitDurationInOpenState: 50s
+            failureRateThreshold: 50
+            eventConsumerBufferSize: 10
+            recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
 
 management:
  endpoints:
