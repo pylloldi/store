@@ -1,4 +1,4 @@
-package com.pyc.store.gatewayservice;
+package com.pyc.store.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
